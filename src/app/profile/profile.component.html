@@ -1,3 +1,30 @@
-<p>
-  profile works!
-</p>
+<div class="row" *ngIf="hero">
+  <div class="col-sm-5">
+		<div class="rating-block">
+			<h3>{{hero.name}}</h3>
+			<h2 class="bold padding-bottom-7"><i-heart></i-heart> {{hero.health}} <small>/ 10</small></h2>
+      <p><strong>Identificación: </strong>{{hero._id}}</p>
+      <p><strong>Ciudad: </strong>Pereira, Risaralda</p>
+      <p><strong>Estado: </strong>Disponible</p>
+		</div>
+	</div>
+	<div class="col-sm-7">
+		<h4>Caracteristicas</h4>
+    <br>
+    <span>Vitalidad</span>
+    <div class="progress">
+      <div class="progress-bar bg-success" role="progressbar" style="width: 90%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <br>
+    <span>Rapidez</span>
+    <div class="progress">
+      <div class="progress-bar bg-info" role="progressbar" style="width: 30%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <br>
+    <span>Fuerza</span>
+    <div class="progress">
+      <div class="progress-bar bg-danger" role="progressbar" style="width: 60%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <br>
+	</div>
+</div>

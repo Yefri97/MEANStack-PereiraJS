@@ -1,3 +1,38 @@
-<p>
-  heroes works!
-</p>
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 ">
+  <h1 class="h2">Lista de Heroes</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-sm">
+    <thead class="thead-dark">
+      <tr>
+        <th>Nombre</th>
+        <th>Vitalidad</th>
+        <th>Rapidez</th>
+        <th>Fuerza</th>
+        <th class="text-center">Ultima actualización</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let hero of heroes">
+        <td><a routerLink="/profile/{{hero._id}}">{{hero.name}}</a></td>
+        <td>{{hero.health}}</td>
+        <td>{{hero.velocity}}</td>
+        <td>{{hero.damage}}</td>
+        <td class="text-center">13/02/2018</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="row">
+  <div class="col-4">
+    <p>Registrar un heroe en la lista:</p>
+  </div>
+  <div class="col-6">
+    <input #heroName class="form-control" placeholder="Nombre">
+  </div>
+  <div class="col-2">
+    <button (click)="add(heroName.value); heroName.value=''" class="btn btn-primary">Agregar</button>
+  </div>
+</div>
